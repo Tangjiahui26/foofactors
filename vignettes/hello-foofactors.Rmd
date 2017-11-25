@@ -2,7 +2,10 @@
 title: "stringsAsFactors = HELLNO"
 author: "Jiahui Tang"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output:
+  rmarkdown::html_vignette:
+    toc: true
+    keep_md: true
 vignette: >
   %\VignetteIndexEntry{stringsAsFactors = HELLNO}
   %\VignetteEngine{knitr::rmarkdown}
