@@ -54,7 +54,7 @@ freq_out(x)
 
 Above codes are based on Jenny's notes. Here I created more functions about dealing with factor.
 
-Most of time we often want to figure out if the factors should be character. We can use`detect_factors`to check if some of the element of the factor are not unique. Otherwise, if all of the elements are unique, you probably should use it as character.
+Most of time we often want to figure out if the factors should be character. We can use`detect_factors()`to check if some of the element of the factor are not unique. Otherwise, if all of the elements are unique, you probably should use it as character.
 
 ```{r}
 a <- factor(c("a","b","c")) ##Should be character
@@ -62,5 +62,29 @@ b <- factor(c("a","b","b")) ##Should be factor
 
 detect_factors(a)
 detect_factors(b)
+```
+
+Sometimes we may want to change the order of factors, and instead order them in descending way. The function`new_reorder()`can help you to realize it.
+
+```{r}
+a <- factor(c("a","b","c"))
+b <- factor(c("apple","banana","pear"))
+
+levels(a)
+levels(new_reorder(a))
+levels(b)
+levels(new_reorder(b))
+
+```
+
+If you want to order your factors as the way they appear in the data. The function`new_factor()` would like to set your factors to the order in which they appear in the data. In contrast, If you want the reverse order,`new_factor_rev()` can be used in your codes.
+
+```{r}
+a <- factor(c("c","b","a"))
+b <- factor(c("banana","apple","pear"))
+levels(a)
+new_factor(a)
+levels(b)
+new_factor(b)
 ```
 
