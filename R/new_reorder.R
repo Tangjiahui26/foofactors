@@ -1,13 +1,16 @@
-#' A new version of reorder() that uses desc()
+#' A new version of reorder that uses desc
+#'
+#' This function give you the ability to sort your factors in descending order.
 #'
 #' @param x a factor or a vector
-#' @return a factor with levels in the order/reverse order appeared in input.
+#' @return a factor
 #' @export
 #'
-#' @examples new_reorder(c("c","b","a"))
+#' @examples new_reorder(factor(c("c","b","a")))
 new_reorder <- function(x){
-  if(is.null(x)){
-    stop("Please enter a factor")
+  if(!is.factor(x)){
+    stop('Please enter a factor!\n',
+         'You have provided an object of class: ', class(x)[1])
   }
   reorder(x, dplyr::desc(x))
 }

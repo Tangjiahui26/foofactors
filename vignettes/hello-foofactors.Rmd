@@ -1,16 +1,17 @@
 ---
-title: "stringsAsFactors = HELLNO"
-author: "Jiahui Tang"
-date: "`r Sys.Date()`"
+title: "Foofactors"
+author: "Edited by Jiahui Tang, created by Jenny Bryan"
 output:
   rmarkdown::html_vignette:
     toc: true
     keep_md: true
 vignette: >
-  %\VignetteIndexEntry{stringsAsFactors = HELLNO}
+  %\VignetteIndexEntry{Vignette Title}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+
+This file works based on Jenny Bryan's coding, and I added some functions after it.
 
 Factors are a very useful type of variable in R, but they can also drive you nuts. Especially the "stealth factor" that you think of as character.
 
@@ -50,3 +51,16 @@ The `freq_out()` function returns a frequency table as a well-named `tbl_df`:
 ```{r}
 freq_out(x)
 ```
+
+Above codes are based on Jenny's notes. Here I created more functions about dealing with factor.
+
+Most of time we often want to figure out if the factors should be character. We can use`detect_factors`to check if some of the element of the factor are not unique. Otherwise, if all of the elements are unique, you probably should use it as character.
+
+```{r}
+a <- factor(c("a","b","c")) ##Should be character
+b <- factor(c("a","b","b")) ##Should be factor
+
+detect_factors(a)
+detect_factors(b)
+```
+

@@ -2,7 +2,7 @@
 % Please edit documentation in R/new_reorder.R
 \name{new_reorder}
 \alias{new_reorder}
-\title{A new version of reorder() that uses desc()}
+\title{A new version of reorder that uses desc}
 \usage{
 new_reorder(x)
 }
@@ -10,11 +10,11 @@ new_reorder(x)
 \item{x}{a factor or a vector}
 }
 \value{
-a factor with levels in the order/reverse order appeared in input.
+a factor
 }
 \description{
-A new version of reorder() that uses desc()
+This function give you the ability to sort your factors in descending order.
 }
 \examples{
-new_reorder(c("c","b","a"))
+new_reorder(factor(c("c","b","a")))
 }

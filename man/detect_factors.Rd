@@ -2,17 +2,21 @@
 % Please edit documentation in R/detect_factors.R
 \name{detect_factors}
 \alias{detect_factors}
-\title{Title}
+\title{Detect factor that should be character}
 \usage{
 detect_factors(x)
 }
 \arguments{
-\item{x}{a vector or a factor}
+\item{x}{a factor}
+}
+\value{
+boolean; \code{TRUE} if input should be considered as factor,
+        \code{FALSE} if input should be considered as character
 }
 \description{
-Title
+This function checks whether the length of the factor is equal to the length of the unique values.
 }
 \examples{
-detect_factors(c("a","b","a"))
-detect_factor(c("a","b","c"))
+detect_factors(factor(c("a","b","a")))
+detect_factors(factor(c("a","b","c")))
 }

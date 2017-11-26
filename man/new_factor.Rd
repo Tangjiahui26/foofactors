@@ -7,15 +7,14 @@
 new_factor(x)
 }
 \arguments{
-\item{x}{a factor or a vector}
+\item{x}{a factor}
 }
 \value{
-a factor with levels in the order/reverse order appeared in x.
+a factor with levels in the order appeared in x.
 }
 \description{
 Set levels of a factor to the order appeared in data
 }
 \examples{
-new_factor(c("d","b","a","d"))
-new_factor_rev(c("a","b","c","a"))
+new_factor(factor(c("d","b","a","d")))
 }
