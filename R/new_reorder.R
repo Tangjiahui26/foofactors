@@ -12,5 +12,5 @@ new_reorder <- function(x){
     stop('Please enter a factor!\n',
          'You have provided an object of class: ', class(x)[1])
   }
-  reorder(x, dplyr::desc(x))
+  stats::reorder(x, dplyr::desc(x))
 }

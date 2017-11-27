@@ -15,6 +15,7 @@ test_that("new_factor returns factors in the order they appear", {
   expect_equal(levels(b1), b)
   expect_equal(levels(c1), c)
 
+  #ERROR - not a factor
   expect_error(new_factor(a))
   expect_error(new_factor(d))
 })
@@ -38,6 +39,7 @@ test_that("new_factor returns factors in the reverse order they appear", {
   expect_equal(levels(b2), b1)
   expect_equal(levels(c2), c1)
 
+  #ERROR - not a factor
   expect_error(new_factor_rev(a))
   expect_error(new_factor_rev(d))
 })

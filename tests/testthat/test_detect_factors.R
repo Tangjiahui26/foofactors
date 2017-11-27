@@ -14,6 +14,7 @@ test_that("detect_factors determines if # unique values = length",{
   expect_identical(detect_factors(c), TRUE)
   expect_identical(detect_factors(d), TRUE)
 
+  #ERROR - not a factor
   expect_error(detect_factors(e))
   expect_error(detect_factors(f))
 })

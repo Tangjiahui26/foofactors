@@ -19,6 +19,7 @@ test_that("new_reorder sort your factors in descending order", {
   expect_equal(levels(b1),b2)
   expect_equal(levels(c1),c2)
 
+  #ERROR - not a factor
   expect_error(new_reorder(e))
   expect_error(new_reorder(a))
 
