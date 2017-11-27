@@ -1,6 +1,6 @@
 context("A new version of reorder that uses desc")
 
-test_that("new_reorder sort your factors in descending order", {
+test_that("expecataion for success", {
 
   a <- c("a","b","c","d")
   b <- c("1","2","3","4")
@@ -18,6 +18,14 @@ test_that("new_reorder sort your factors in descending order", {
   expect_equal(levels(a1),a2)
   expect_equal(levels(b1),b2)
   expect_equal(levels(c1),c2)
+})
+
+test_that("expectation for error", {
+
+  a <- c("a","b","c","d")
+  b <- c("1","2","3","4")
+  c <- c("apple","banana","pear")
+  e <- 123
 
   #ERROR - not a factor
   expect_error(new_reorder(e))
