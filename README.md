@@ -71,13 +71,79 @@ freq_out(x)
 
 ### `detect_factors()`
 
+Most of time we often want to figure out if the factors should be character. We can use `detect_factors()` to check if some of the element of the factor are not unique. Otherwise, if all of the elements are unique, you probably should use it as character.
+
+``` r
+a <- factor(c("a","b","c")) ##Should be character
+b <- factor(c("a","b","b")) ##Should be factor
+
+detect_factors(a)
+#> [1] FALSE
+detect_factors(b)
+#> [1] TRUE
+```
+
 ### `check_factors()`
+
+If you want to check a dataframe for factors, you can use`check_factors()`. This functions will check if your dataframe contains any factors you don't want to use.
+
+``` r
+check_factors(iris)
+#> [1] "Species"
+check_factors(mtcars)
+#> character(0)
+```
 
 ### `new_factor()` and `new_factor_rev()`
 
+The function `new_factor()` would like to set your factors to the order in which they appear in the data. In contrast, If you want the reverse order,`new_factor_rev()` can be used in your codes.
+
+``` r
+a <- factor(c("c","b","a"))
+b <- factor(c("banana","apple","pear"))
+levels(a)
+#> [1] "a" "b" "c"
+new_factor(a)
+#> [1] c b a
+#> Levels: c b a
+levels(b)
+#> [1] "apple"  "banana" "pear"
+new_factor(b)
+#> [1] banana apple  pear  
+#> Levels: banana apple pear
+```
+
+Examples for`new_factor_rev()`:
+
+``` r
+new_factor_rev(a)
+#> [1] c b a
+#> Levels: a b c
+new_factor_rev(b)
+#> [1] banana apple  pear  
+#> Levels: pear apple banana
+```
+
 ### `new_reorder()`
+
+Sometimes we may want to change the order of factors, and instead order them in descending way. The function`new_reorder()`can help you to realize it.
+
+``` r
+a <- factor(c("a","b","c"))
+b <- factor(c("apple","banana","pear"))
+
+levels(a)
+#> [1] "a" "b" "c"
+levels(new_reorder(a))
+#> [1] "c" "b" "a"
+levels(b)
+#> [1] "apple"  "banana" "pear"
+levels(new_reorder(b))
+#> [1] "pear"   "banana" "apple"
+```
 
 Acknowledgements
 ----------------
 
--   Jenny Bryan and STAT 545/547M for teaching and providing resources to simplify writing an R package
+-   Thanks for Jenny Bryan's [Comprehensive tutorial](http://stat545.com/packages06_foofactors-package.html)
+-   Also STAT 545/547M [Lecture tutorial](http://stat545.com/cm109-110-notes_and_exercises.html)

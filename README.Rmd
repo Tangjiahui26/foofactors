@@ -33,8 +33,6 @@ devtools::install_github("Tangjiahui26/foofactors")
 
 ```{r}
 library(foofactors)
-library(gapminder)
-library(singer)
 a <- factor(c("character", "hits", "your", "eyeballs"))
 b <- factor(c("but", "integer", "where it", "counts"))
 c(a,b)
@@ -75,18 +73,45 @@ detect_factors(b)
 If you want to check a dataframe for factors, you can use`check_factors()`. This functions will check if your dataframe contains any factors you don't want to use.
 
 ```{r}
-check_factors(gapminder)
-
+check_factors(iris)
+check_factors(mtcars)
 ```
 
 ### `new_factor()` and `new_factor_rev()`
 
+The function `new_factor()` would like to set your factors to the order in which they appear in the data. In contrast, If you want the reverse order,`new_factor_rev()` can be used in your codes.
 
+```{r}
+a <- factor(c("c","b","a"))
+b <- factor(c("banana","apple","pear"))
+levels(a)
+new_factor(a)
+levels(b)
+new_factor(b)
+```
+
+Examples for`new_factor_rev()`:
+
+```{r}
+new_factor_rev(a)
+new_factor_rev(b)
+```
 
 ### `new_reorder()`
 
+Sometimes we may want to change the order of factors, and instead order them in descending way. The function`new_reorder()`can help you to realize it.
 
+```{r}
+a <- factor(c("a","b","c"))
+b <- factor(c("apple","banana","pear"))
+
+levels(a)
+levels(new_reorder(a))
+levels(b)
+levels(new_reorder(b))
+```
 
 ## Acknowledgements
 
-+ Jenny Bryan and STAT 545/547M for teaching and providing resources to simplify writing an R package
++ Thanks for Jenny Bryan's [Comprehensive tutorial](http://stat545.com/packages06_foofactors-package.html)
++ Also STAT 545/547M [Lecture tutorial](http://stat545.com/cm109-110-notes_and_exercises.html)

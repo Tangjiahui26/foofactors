@@ -96,3 +96,10 @@ levels(b)
 new_factor(b)
 ```
 
+Examples for`new_factor_rev()`:
+
+```{r}
+new_factor_rev(a)
+new_factor_rev(b)
+```
+
