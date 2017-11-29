@@ -18,3 +18,4 @@ Suggests: testthat,
 Imports: dplyr,
     gapminder
 VignetteBuilder: knitr
+URL: https://github.com/Tangjiahui26/foofactors
